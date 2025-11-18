@@ -18,8 +18,38 @@
       <input type="text" id="major" placeholder="Major (e.g. Computer Science)" required />
       <button type="submit">Next</button>
     </form>
+
+   <form id="signupStep2" class="step">
+      <input type="text" id="username" placeholder="Choose a Username" required />
+      <input type="email" id="email" placeholder="Email Address" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <input type="password" id="confirmPassword" placeholder="Confirm Password" required />
+
+      <div class="button-row">
+        <button type="button" id="backTo1">Back</button>
+        <button type="button" id="toStep3">Next</button>
+      </div>
+    </form>
+
+     <form id="signupStep3" class="step">
+      <label for="profilePic" class="upload-label">Upload Profile Picture (optional)</label>
+      <input type="file" id="profilePic" accept="image/*" />
+      
+      <p class="summary-title">Review Your Information</p>
+      <ul class="summary">
+        <li><strong>Name:</strong> <span id="summaryName"></span></li>
+        <li><strong>Major:</strong> <span id="summaryMajor"></span></li>
+        <li><strong>Username:</strong> <span id="summaryUsername"></span></li>
+        <li><strong>Email:</strong> <span id="summaryEmail"></span></li>
+      </ul>
+ <div class="button-row">
+        <button type="button" id="backTo2">Back</button>
+        <button type="submit" id="finishSignup">Create Account</button>
+      </div>
+    </form>
+
   </div>
 
-  <script src="signup.js"></script>
+  <script src="login.js"></script>
 </body>
 </html
