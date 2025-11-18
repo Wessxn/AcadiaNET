@@ -1,23 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AcadiaNET - Create Account</title>
-  <link rel="stylesheet" href="{% static 'login/login.css' %}">
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AcadiaNET - Create Account</title>
+    <link rel="stylesheet" href="{% static 'login/index.css' %}">
+    
+    <style>
+        .hidden {
+            display: none !important;
+        }
+    </style>
 </head>
 <body>
-  <div class="signup-container">
-    <img src="{% static 'login/acadiaNETlogo.png' %}" alt="AcadiaNET Logo" class="logo" />
-    <h2>Create Your Account</h2>
-    <p class="step-indicator">Step 1 of 3</p>
+    <div class="signup-container">
+        <img src="{% static 'login/acadiaNETlogo.png' %}" alt="AcadiaNET Logo" class="logo">
+        <h2>Create Your Account</h2>
+        
+        <p class="step-indicator" id="stepIndicator">Step 1 of 3</p>
 
-    <form id="signupStep1">
-      <input type="text" id="firstName" placeholder="First Name" required />
-      <input type="text" id="lastName" placeholder="Last Name" required />
-      <input type="text" id="major" placeholder="Major (e.g. Computer Science)" required />
-      <button type="submit">Next</button>
-    </form>
-  </div>
+        <form id="signupStep1" class="form-step">
+            <input type="text" id="firstName" placeholder="First Name" required />
+            <input type="text" id="lastName" placeholder="Last Name" required />
+            <input type="text" id="major" placeholder="Major (e.g. Computer Science)" required />
+            <button type="submit">Next</button>
+        </form>
+
+        <form id="signupStep2" class="form-step hidden">
+            <input type="text" id="username" placeholder="Choose a Username" required />
+            <input type="email" id="email" placeholder="Email Address" required />
+            <input type="password" id="password" placeholder="Password" required />
+            <input type="password" id="confirmPassword" placeholder="Confirm Password" required />
+
+            <div class="button-row">
+                <button type="button" id="backTo1">Back</button>
+                <button type="submit" id="toStep3">Next</button>
+            </div>
+        </form>
+
+        <form id="signupStep3" class="form-step hidden">
+            <label for="profilePic" class="upload-label">Upload Profile Picture (optional)</label>
+            <input type="file" id="profilePic" accept="image/*" />
+            
+            <p class="summary-title">Review Your Information</p>
+            <ul class="summary">
+                <li><strong>Name:</strong> <span id="summaryName"></span></li>
+                <li><strong>Major:</strong> <span id="summaryMajor"></span></li>
+                <li><strong>Username:</strong> <span id="summaryUsername"></span></li>
+                <li><strong>Email:</strong> <span id="summaryEmail"></span></li>
+            </ul>
+            
+            <div class="button-row">
+                <button type="button" id="backTo2">Back</button>
+                <button type="submit" id="finishSignup">Create Account</button>
+            </div>
+        </form>
+
+    </div>
+
+    <script src="{% static 'login/login.js' %}" defer></script>
 </body>
-</html
+</html>
