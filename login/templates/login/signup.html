@@ -4,15 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AcadiaNET - Create Account</title>
-<<<<<<<< Updated upstream:login.html
-  <link rel="stylesheet" href="index.css" />
-========
-  <!-- <link rel="stylesheet" href="login.css" /> -->
->>>>>>>> Stashed changes:signup.html
+  <link rel="stylesheet" href="{% static 'login/login.css' %}">
 </head>
 <body>
   <div class="signup-container">
-    <img src="acadiaNETlogo.png" alt="AcadiaNET Logo" class="logo" />
+    <img src="{% static 'login/acadiaNETlogo.png' %}" alt="AcadiaNET Logo" class="logo" />
     <h2>Create Your Account</h2>
     <p class="step-indicator">Step 1 of 3</p>
 
@@ -23,7 +19,5 @@
       <button type="submit">Next</button>
     </form>
   </div>
-
-  <script src="signup.js"></script>
 </body>
 </html
