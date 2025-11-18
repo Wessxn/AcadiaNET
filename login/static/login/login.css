@@ -8,26 +8,61 @@ body {
   margin: 0;
 }
 
-.login-container {
-  background: white;
-  border-radius: 12px;
-  padding: 40px 30px;
-  width: 350px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  text-align: center;
+nav ul {
+    list-style-type: none; 
+    margin: 0;
+    padding: 0;
+ 
 }
+
+nav li {
+    display: none; 
+}
+
+h2 {
+    color: #002855;
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-top: 5px; 
+    margin-bottom: 25px; 
+}
+
+
+.login-container, .signup-container {
+  background: white;
+  border-radius: 3px;
+  padding: 40px 30px;
+  width: 380px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  text-align: center;
+  border: 1px solid #eee;
+}
+
+.login-container form{
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-container form{
+  flex-direction: row;
+  align-items: center;
+}
+
 
 .logo {
   width: 80px;
   margin-bottom: 10px;
 }
 
-input {
+input[type="text"], 
+input[type="password"], 
+input[type="email"], 
+input[type="file"] { 
   display: block;
-  width: 100%;
+  width: 95%;
   padding: 10px;
   margin: 10px 0;
-  border: 1px solid #ccc;
+  border: 1px solid black;
   border-radius: 8px;
   font-size: 14px;
 }
@@ -35,10 +70,11 @@ input {
 button {
   background-color: #002855; /* Acadia navy tone */
   color: white;
-  border: none;
+  border: 1px solid black;
   border-radius: 8px;
-  padding: 10px;
-  width: 100%;
+  padding: 3px;
+  width: 50%;
+  margin: 0 auto;
   font-size: 16px;
   cursor: pointer;
 }
@@ -51,22 +87,23 @@ button:hover {
   margin-top: 10px;
   font-size: 13px;
 
-}.signup-container {
+/* }.signup-container {
   background: white;
-  border-radius: 15px;
+  border-radius: 10px;
   padding: 40px 30px;
   width: 350px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   text-align: center;
-}
+} */
 
 .step-indicator {
-  font-size: 14px;
+  font-size: 1px;
   color: #555;
   margin-bottom: 15px;
 }
 
-input {
+
+/* input {
   display: block;
   width: 100%;
   padding: 10px;
@@ -85,10 +122,58 @@ button {
   width: 100%;
   font-size: 16px;
   cursor: pointer;
-}
+} */
 
 button:hover {
   background-color: #014f86;
 }
 
+.step {
+  display: none;
+}
 
+.step.active {
+  display: block;
+}
+
+.button-row {
+  display: flex;
+  justify-content: left;
+  gap: 10px;
+}
+
+.summary-title {
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.summary {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 20px;
+  text-align: left;
+}
+
+.summary li {
+  margin-bottom: 8px;
+  line-height: 1.4;
+  padding-left: 5px;
+}
+
+
+.summary-title {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: 700; /* Bold */
+    font-size: 1.1em;
+    color: #002855; /* Acadia Navy */
+}
+
+
+.upload-label {
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+  display: block;
+}
+
+}
