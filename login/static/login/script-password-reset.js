@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
       alert("Please enter a valid email address.");
       return;
     }
-
+    
     // Simulate sending reset email
     alert("A password reset link has been sent to: " + email);
 
