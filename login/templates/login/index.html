@@ -25,9 +25,9 @@
       <img src="{% static 'login/acadiaNETlogo.png' %}" alt="AcadiaNET Logo" class="logo">
 
       <h2>Welcome to AcadiaNET</h2>
-      <form id="loginForm">
-        <input type="text" id="username" placeholder="Username" required="">
-        <input type="password" id="password" placeholder="Password" required="">
+      <form action="login" method="POST" class="login-form">
+        <input type="text" id="username" name="username" placeholder="Username" required="">
+        <input type="password" id="password" name="password" placeholder="Password" required="">
         <button type="submit">Login</button>
         
         
@@ -36,8 +36,7 @@
       </label>
         <p class="forgot-password" style="text-align: right; margin-top: -15px;" >
           <a href="{% url 'forgetpass' %}">Forgot Password?</a>
-    
-
+          
   </p>
         <p class="signup-link">Don’t have an account? <a href="{% url 'signup' %}">Sign Up</a></p>
       </form>

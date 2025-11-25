@@ -3,46 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% load static %}
+    <link rel="stylesheet" href="{% static 'login/index.css' %}">
     <title>Verify Email</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .verify-input {
-            width: 250px;
-            padding: 10px;
-            margin: 10px 0;
-            font-size: 16px;
-        }
-        .verify-btn {
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        .verify-btn:hover {
-            background-color: #ad1e13;
-        }
-    </style>
-    {% load static %}
     <link rel="stylesheet" href="{% static 'login/index.css' %}">
 </head>
 <body>
-    <h2>Verify Your Email</h2>
-
-<form method="POST">
+    <h2>Enter the verfication code sent to your email<br></h2>
+   <form method="post" class="code">
     {% csrf_token %}
-    <input type="text" name="code" placeholder="Enter the 6-digit code" required class="verify-input">
-    <button type="submit" class="verify-btn">Verify</button>
-</form>
+    {{form}}
+    </form>
 </body>
 </html>

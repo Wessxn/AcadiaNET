@@ -3,7 +3,7 @@ const step1 = document.getElementById('signupStep1');
 const step2 = document.getElementById('signupStep2');
 const step3 = document.getElementById('signupStep3');
 const stepIndicator = document.getElementById('stepIndicator');
-
+const csrftoken = document.cookie.match(/csrftoken=([\w-]+)/)[1];
 // Get all 'Next' and 'Back' buttons
 const toStep2Button = step1.querySelector('button[type="submit"]'); // Next button in step 1
 const backTo1Button = document.getElementById('backTo1');
@@ -93,8 +93,19 @@ backTo2Button.addEventListener('click', function() {
 // Step 3 'Create Account' button (Final submission)
 step3.addEventListener('submit', function(event) {
     event.preventDefault(); 
-    
-    // NOTE: This is where you would typically use fetch() or XMLHttpRequest 
+    const email = document.getElementById('email').value
+    console.log("Email:", email);
+    fetch("/verify/", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "X-CSRFToken": csrftoken, // Include CSRF token for Django
+        },
+        body: JSON.stringify({
+            email: email,}),
+    }).then(response => {window.location.href = "/verify/"});
+
+  // NOTE: This is where you would typically use fetch() or XMLHttpRequest 
     // to send all the collected data (name, major, credentials, profile pic) 
     // to your Django view for processing and database storage.
     
@@ -102,5 +113,6 @@ step3.addEventListener('submit', function(event) {
     // In a real application, you would redirect the user upon successful submission.
 });
 
+showStep(4);
 // Initialize the form to show Step 1
 showStep(1);
