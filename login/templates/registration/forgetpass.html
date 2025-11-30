@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html>
-
 <head>
+  {% load static %}
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reset Password – AcadiaNET</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="./index.css">
+  <link rel="stylesheet" href="{% static 'login/index.css' %}">
 </head>
 
 <body>
 
   <div class="login-container">
-    <img src="acadiaNETlogo.png" alt="AcadiaNET Logo" class="logo">
+      <img src="{% static 'login/acadiaNETlogo.png' %}" alt="AcadiaNET Logo" class="logo">
 
     <h2>Reset Your Password</h2>
 
@@ -20,12 +19,12 @@
       Enter your email and we will send you a password reset link.
     </p>
 
-    <form id="resetForm">
-      <input type="email" id="email" placeholder="Enter your email" required>
+    <form id="resetForm" method="POST">
+      {% csrf_token %}
+      {{ form.email }}
       <button type="submit">Send Reset Link</button>
-
       <p class="back-to-login">
-        <a href="index.html">← Back to Login</a>
+        <a href="{% url 'login' %}">← Back to Login</a>
       </p>
     </form>
   </div>
