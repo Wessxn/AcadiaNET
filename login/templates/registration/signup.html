@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AcadiaNET - Create Account</title>
+    <link rel="stylesheet" href="{% static 'login/index.css' %}">
+    <style>
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-container">
+        <img src="{% static 'login/acadiaNETlogo.png' %}" alt="AcadiaNET Logo" class="logo">
+        <h2>Create Your Account</h2>
+        
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{form}}
+            <button type="submit">Create Account</button>
+        </form>
+    </div>
+
+    <script src="{% static 'login/login.js' %}" defer></script>
+</body>
+</html>

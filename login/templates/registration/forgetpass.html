@@ -19,12 +19,12 @@
       Enter your email and we will send you a password reset link.
     </p>
 
-    <form id="resetForm">
-      <input type="email" id="email" placeholder="Enter your email" required>
+    <form id="resetForm" method="POST">
+      {% csrf_token %}
+      {{ form.email }}
       <button type="submit">Send Reset Link</button>
-
       <p class="back-to-login">
-        <a href="{% url 'index' %}">← Back to Login</a>
+        <a href="{% url 'login' %}">← Back to Login</a>
       </p>
     </form>
   </div>

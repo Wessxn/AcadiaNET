@@ -1,22 +1,24 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractUser, User
 import uuid
+from django.utils import timezone
+from django.conf import settings
 
 # Create your models here.
-class EmailVerification(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    verification_code = models.UUIDField(default=uuid.uuid4, editable=False)
-    created_at = models.DateTimeField(auto_now_add=True)
-    is_verified = models.BooleanField(default=False)
+class Profile(AbstractUser):
+    REQUIRED_FIELDS = ['email', 'first_name', 'last_name', 'password', 'major']
+    major = models.CharField(max_length=50, blank=True)
 
-    def __str__(self):
-        return f"EmailVerification(user={self.user.username}, code={self.verification_code}, verified={self.is_verified})"
+    def save(self, *args, **kwargs):
+        self.set_password(self.password)
+        super().save(*args, **kwargs)
     
+class Post(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    content = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
 
-class UserProfile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    bio = models.TextField(blank=True, null=True)
-    profile_picture = models.ImageField(upload_to='profile_pics/', blank=True, null=True)
-
-    def __str__(self):
-        return f"UserProfile(user={self.user.username})"
+    def publish(self):
+        self.created_at = timezone.now()
+        self.save()
