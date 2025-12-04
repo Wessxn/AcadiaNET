@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    {% load static %}
+<head>
+<meta charset="UTF-8" />    
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>AcadiaNET Group Chat Messages</title>
+<link rel="stylesheet" href="{% static 'gchat.css' %}">
+</head>>
+
+<body class= "chat-page">
+<div class= "chat-container">
+    <aside class="side-bar">
+        <header class="gsidebar-header">
+            <div class="header-top">
+                <span class="logo-text">Group Chats</span>
+                <button class="new-chat-btn"> + </button>
+            </div>
+
+            <div class="search-box">
+                <input type="text" placeholder="Search">
+            </div>
+        </header>
+
+        <ul class="conversation-list">
+            
+        </ul>
+    </aside>
+
+    <main class="chat-window">
+        <header class="chat-head">
+            <div class="user-avatar-large">
+                <img src="{% static 'profilepic.png' %}" alt="group" width="45" height="45">
+            </div>
+            <p class="chat-title">PiedPiper</p>
+        </header>
+
+        <!-- Messages -->
+
+        <footer class="send-box">
+            <input type="text" placeholder="Type a message">
+            <button class="send-btn">Send</button>
+        </footer>
+    </main>
+</div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  {% load static %}
+<head>
+<meta charset="UTF-8" />    
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+
+<title>AcadiaNET Account</title>
+<link rel="stylesheet" href="{% static 'dashboard.css' %}">
+</head>
+
+<body>
+<div class="settings-page">
+  <div class="settings-container">
+    <h1 class="page-title">Account</h1>
+
+    <div class="settings-section">
+      <h2 class="settings-title">General Information</h2>
+    <div class="general-info">
+        
+        <div class="profile-circleset">
+    <img src="{% static 'profilepic.png' %}" alt="AcadiaNET Logo" class="profile-circle"> </a>
+    </div>
+
+    <div class="info-grid">
+<div class="info-item">
+<label>Name:</label>
+{{user.first_name}} {{user.last_name}}
+</div>
+
+<div class="info-item">
+<label>Acadia Username: {{user.username}} </label>
+</div>
+
+<div class="info-item">
+<label>Email: {{user.email}} </label> 
+</div>
+
+<div class="info-item">
+<label>Program:</label>
+{{user.major}}
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="settings-section">
+<h2 class="settings-title">App Settings</h2>
+<ul class="settings-list">
+<li><a href="">Privacy Policy</a></li>
+<li><a href="">Terms of Service</a></li>
+<li><a href="">About the App</a></li>
+</ul>
+</div>
+
+<div class="settings-section danger-zone">
+<h2 class="settings-title">Danger Zone</h2>
+<button class="delete-btn">Delete Account</button>
+<button class="deactivate-btn">Deactivate Account</button>
+</div>
+
+<div class="back-container">
+<a href= "{% url 'dashboard' %}" class="back-btn">Back to Homepage</a>
+</div>
+</div>
+</div>
+</body>
+</html>
