@@ -1,12 +1,10 @@
-/* --- Dashboard Specific Body Overrides --- */
 
 body {
-    /* Override background for the dashboard page */
     background-color:  #a3080c; 
     display: flex;
     flex-direction: column; 
-    align-items: center; /* Center content horizontally */
-    justify-content: flex-start; /* Start content from the top */
+    align-items: center;
+    justify-content: flex-start;
 }
 
 a {
@@ -14,7 +12,7 @@ a {
     color: inherit;
 }
 
-/* --- Top Bar & Header --- */
+
 
 .top-bar {
     position: fixed;
@@ -31,7 +29,7 @@ a {
     align-items: top;
     border-bottom: 2px solid #a3080c;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
-    width: 100%; /* Ensure the header spans the entire width */
+    width: 100%; 
 }
 
 .top-right {
@@ -39,8 +37,6 @@ a {
     align-items: center;
     gap: 20px;
 }
-
-/* --- Profile Section --- */
 
 .profile-section {
     display: flex;
@@ -64,7 +60,6 @@ a {
 }
 
 .logout-btn {
-    /* Override base button styles for the specific logout button */
     background-color: #002855; 
     color: white;
     border: 1px solid white;
@@ -80,7 +75,7 @@ a {
     background-color: #83060a;
 }
 
-/* --- Dashboard Container & Welcome --- */
+/*Dashboard Container & Welcome */
 
 .dashboard-container {
     padding: 40px 20px;
@@ -105,7 +100,7 @@ a {
     font-weight: 700;
 }
 
-/* --- Navigation Grid (The Cards) --- */
+/*Navigation GrID*/
 
 .nav-grid {
     display: grid;
@@ -149,8 +144,8 @@ a {
 
 
 
-/* x*/
-/* --- Page Layout and Container --- */
+
+/*Page Layout and ContaineR*/
 
 body {
     background-color: #83060a; /* Light grey background */
@@ -174,15 +169,13 @@ body {
 }
 
 .page-title {
-    color: #002855; /* Acadia Navy */
+    color: #002855;
     font-size: 2.2em;
     font-weight: bold;
-    border-bottom: 4px solid #a3080c; /* Acadia Red accent line */
+    border-bottom: 4px solid #a3080c; 
     padding-bottom: 15px;
     margin-bottom: 30px;
 }
-
-/* --- Section Styling --- */
 
 .settings-section {
     margin-bottom: 40px;
@@ -202,7 +195,7 @@ body {
     margin-bottom: 20px;
 }
 
-/* --- General Information & Profile --- */
+
 
 .general-info {
     display: flex;
@@ -212,25 +205,24 @@ body {
 }
 
 .profile-circleset {
-    /* Reusing the style from dashboard.css but making it larger */
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    background-color: #e0e0e0; /* Light gray placeholder */
-    border: 4px solid #a3080c; /* Acadia Red Border */
-    box-shadow: 0 0 0 2px #002855; /* Outer Navy Border (simulated) */
+    background-color: #e0e0e0; 
+    border: 4px solid #a3080c;
+    box-shadow: 0 0 0 2px #002855;
     overflow: hidden;
 }
 
 .profile-circleset img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* IMPORTANT */
+    object-fit: cover; 
 }
 
 .info-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Two columns */
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
 }
 
@@ -251,7 +243,7 @@ body {
     text-transform: uppercase;
 }
 
-/* --- App Settings List --- */
+
 
 .settings-list {
     list-style: none;
@@ -276,11 +268,11 @@ body {
     color: #a3080c;
 }
 
-/* --- Danger Zone --- */
+
 
 .danger-zone {
-    border: 2px solid #a3080c; /* Highlight the zone with red border */
-    background-color: #fff0f0; /* Very light red background */
+    border: 2px solid #a3080c;
+    background-color: #fff0f0;
     padding: 20px;
     border-radius: 10px;
     display: flex;
@@ -294,7 +286,6 @@ body {
 }
 
 .delete-btn, .deactivate-btn {
-    /* Overriding default button styles for danger actions */
     width: 100%;
     padding: 12px;
     font-size: 16px;
@@ -307,7 +298,7 @@ body {
 }
 
 .delete-btn {
-    background-color: #a3080c; /* Acadia Red */
+    background-color: #a3080c;
     color: white;
 }
 
@@ -316,7 +307,7 @@ body {
 }
 
 .deactivate-btn {
-    background-color: #002855; /* Acadia Navy */
+    background-color: #002855;
     color: white;
 }
 
@@ -324,7 +315,7 @@ body {
     background-color: #014f86;
 }
 
-/* --- Back Button --- */
+
 
 .back-container {
     text-align: center;
@@ -345,14 +336,14 @@ body {
     background-color: #014f86;
 }
 
-/* --- Responsive Adjustments --- */
+
 
 @media (max-width: 600px) {
     .settings-container {
         padding: 20px;
     }
     .info-grid {
-        grid-template-columns: 1fr; /* Stack columns on mobile */
+        grid-template-columns: 1fr; 
     }
     .general-info {
         flex-direction: column;
@@ -362,3 +353,4 @@ body {
         margin-bottom: 10px;
     }
 }
+
