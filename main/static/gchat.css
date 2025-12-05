@@ -204,6 +204,7 @@ body.chat-page {
     padding: 10px;
     border-top: 1px solid #bbb;
     background-color: #cce0ff;
+    margin-top: auto;
 }
 
 .send-box input {
@@ -238,4 +239,10 @@ body.chat-page {
 .chat-window::-webkit-scrollbar-thumb {
     background-color: #6666cc;
     border-radius: 10px;
+}
+
+.messages {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-bottom: 10px;
 }

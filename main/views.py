@@ -3,7 +3,9 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect
 from django.contrib.auth import logout
-
+from .models import ChatRoom, Message
+from django.shortcuts import render, redirect, get_object_or_404
+from django.http import JsonResponse
 User = get_user_model()
 
 # Create your views here.
