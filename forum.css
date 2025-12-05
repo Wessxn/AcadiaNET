@@ -1,0 +1,146 @@
+
+body.forum-page {
+    margin: 0;
+    padding: 0;
+    background-color: #a3080c;
+    font-family: 'Times New Roman', serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+
+.forum-container {
+    width: 90%;
+    max-width: 1100px;
+    background: #ffffff;
+    margin-top: 40px;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0px 4px 18px rgba(0,0,0,0.25);
+}
+
+
+.forum-header h1 {
+    margin: 0;
+    font-size: 28px;
+    color: #333;
+}
+
+
+.forum-nav {
+    margin-top: 25px;
+    display: flex;
+    gap: 10px;
+}
+
+.tab-button {
+    padding: 10px 18px;
+    border: none;
+    background-color: #f2f2f2;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.tab-button.active {
+    background-color: #a3080c;
+    color: white;
+}
+
+.tab-button:hover {
+    background-color: #e0e0e0;
+}
+
+.button-primary {
+    margin-left: auto;
+    padding: 10px 18px;
+    background-color: #a3080c;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+}
+
+.button-primary:hover {
+    background-color: #7d0609;
+}
+
+
+.forum-description p {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #444;
+}
+
+
+.forum-search {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-icon {
+    background-color: #ddd;
+    padding: 6px 10px;
+    border-radius: 6px;
+}
+
+.forum-search input {
+    flex-grow: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.search-btn {
+    padding: 10px 20px;
+    background-color: #a3080c;
+    border-radius: 8px;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.search-btn:hover {
+    background-color: #7d0609;
+}
+
+/* --- Forum Table --- */
+.forum-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+}
+
+.forum-table th {
+    text-align: left;
+    padding: 12px;
+    background-color: #f7f7f7;
+    border-bottom: 2px solid #ddd;
+    font-size: 16px;
+}
+
+.forum-table td {
+    padding: 14px 12px;
+    border-bottom: 1px solid #eee;
+    font-size: 15px;
+}
+
+.forum-table tr:hover {
+    background-color: #f2f2f2;
+}
+
+.discussion-col a {
+    text-decoration: none;
+    color: #a3080c;
+    font-weight: bold;
+}
+
+.discussion-col a:hover {
+    text-decoration: underline;
+
+}
